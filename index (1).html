@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Suriya Ganapathi K | AI Engineer – Voice Agents, RAG, Document AI</title>
+<meta name="description" content="AI Engineer with 4+ production AI applications: a multilingual voice agent handling 500+ calls a day, OCR document processing, RAG and multi-agent systems.">
+<meta property="og:title" content="Suriya Ganapathi K | AI Engineer">
+<meta property="og:description" content="Production voice agents, document AI and RAG systems for banks and enterprise clients.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#0a0d1f">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%230a0d1f%22/><text x=%2250%22 y=%2268%22 font-size=%2258%22 font-family=%22sans-serif%22 font-weight=%22700%22 text-anchor=%22middle%22 fill=%22%23ffb21a%22>S</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Instrument+Sans:wght@400;500;600&family=Noto+Sans+Tamil:wght@400;500&family=Noto+Sans+Devanagari:wght@400;500&display=swap" rel="stylesheet">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Suriya Ganapathi K","jobTitle":"AI Engineer","worksFor":{"@type":"Organization","name":"DoodleBlue Innovations"},"url":"https://suriya1409.github.io","sameAs":["https://www.linkedin.com/in/suriya-ganapathi-659973319/","https://github.com/suriya1409"],"address":{"@type":"PostalAddress","addressLocality":"Chennai","addressCountry":"IN"}}</script>
+<style>
+:root{--bg:#0a0d1f;--bg2:#10142b;--ink:#eef1fb;--muted:#a3abcb;--line:rgba(160,172,230,.16);--glass:rgba(22,27,58,.62);--glass2:rgba(255,255,255,.04);
+--accent:#ffb21a;--a2:#6c7bff;--a3:#27d3b4;--on-accent:#1a1300;--good:#27d3b4;
+--display:"Bricolage Grotesque","Instrument Sans",system-ui,sans-serif;--body:"Instrument Sans","Noto Sans Tamil","Noto Sans Devanagari",system-ui,sans-serif}
+[data-theme=light]{--bg:#f4f6fc;--bg2:#e9edf8;--ink:#141834;--muted:#566080;--line:rgba(30,40,100,.14);--glass:rgba(255,255,255,.75);--glass2:rgba(20,30,90,.04);--accent:#e89400;--a2:#4f5cf0;--a3:#12a58b;--on-accent:#1a1300}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.04rem/1.65 var(--body);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit}:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:8px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 1.5rem;position:relative}
+h1,h2,h3{font-family:var(--display);margin:0;line-height:1.08}
+h2{font-size:clamp(2rem,4.4vw,2.9rem);letter-spacing:-.02em;margin-bottom:.7rem}
+.sub{color:var(--muted);margin:0 0 2.4rem;max-width:58ch}
+section{padding:5rem 0;position:relative}
+.eyebrow{display:inline-block;color:var(--accent);font-weight:600;font-size:.9rem;margin-bottom:.8rem}
+#prog{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--accent),var(--a2),var(--a3));z-index:30}
+
+header.bar{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 70%,transparent);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.bar .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font:800 1.1rem var(--display);text-decoration:none;display:flex;align-items:center;gap:.6rem}
+.logo i{width:30px;height:30px;border-radius:9px;background:linear-gradient(135deg,var(--accent),#ff7a3d);display:grid;place-items:center;color:var(--on-accent);font-style:normal;font-size:.95rem}
+.bar nav{display:flex;align-items:center;gap:1.4rem;font-size:.93rem}
+.bar nav a{text-decoration:none;color:var(--muted)}.bar nav a:hover{color:var(--ink)}
+#theme{width:38px;height:38px;border-radius:50%;border:1px solid var(--line);background:var(--glass2);color:var(--ink);cursor:pointer;font-size:1rem}
+.btn{display:inline-flex;align-items:center;gap:.45rem;padding:.78rem 1.35rem;border-radius:999px;border:1px solid var(--line);text-decoration:none;font-weight:600;font-size:.95rem;color:var(--ink);background:var(--glass2);cursor:pointer;font-family:inherit;transition:transform .15s,box-shadow .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn.primary,.bar nav a.btn{background:linear-gradient(135deg,var(--accent),#ff8a3d);border-color:transparent;color:var(--on-accent);box-shadow:0 10px 30px -12px var(--accent)}
+.bar nav a.btn{padding:.5rem 1.05rem;font-size:.9rem}
+
+.hero-bg{position:absolute;inset:0;overflow:hidden;z-index:-1;pointer-events:none}
+.hero-bg i{position:absolute;border-radius:50%;filter:blur(90px);opacity:.5;animation:drift 18s ease-in-out infinite alternate}
+.hero-bg i:nth-child(1){width:520px;height:520px;background:var(--a2);top:-160px;left:-120px}
+.hero-bg i:nth-child(2){width:460px;height:460px;background:var(--accent);opacity:.28;top:80px;right:-140px;animation-delay:-6s}
+.hero-bg i:nth-child(3){width:420px;height:420px;background:var(--a3);opacity:.25;bottom:-200px;left:36%;animation-delay:-11s}
+.hero-bg::after{content:"";position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:56px 56px;mask-image:radial-gradient(ellipse at 50% 30%,#000 20%,transparent 70%);opacity:.5}
+@keyframes drift{to{transform:translate(60px,40px) scale(1.12)}}
+
+.hero{display:grid;grid-template-columns:1.1fr 1fr;gap:3.5rem;align-items:center;padding:4.5rem 0 3.5rem}
+.avail{display:inline-flex;align-items:center;gap:.55rem;font-size:.88rem;font-weight:500;padding:.35rem .9rem;border:1px solid var(--line);border-radius:999px;background:var(--glass);margin-bottom:1.5rem}
+.avail i{width:8px;height:8px;border-radius:50%;background:var(--good);box-shadow:0 0 0 0 var(--good);animation:ping 2s infinite}
+@keyframes ping{70%{box-shadow:0 0 0 9px transparent}100%{box-shadow:0 0 0 0 transparent}}
+.hero h1{font-size:clamp(2.7rem,6.6vw,4.7rem);font-weight:800;letter-spacing:-.03em;background:linear-gradient(120deg,var(--ink) 40%,var(--accent));-webkit-background-clip:text;background-clip:text;color:transparent}
+.type{margin:1.4rem 0 .6rem;font:600 1.3rem var(--display);color:var(--a3);min-height:1.9rem}
+.type::after{content:"";display:inline-block;width:2px;height:1.1em;background:var(--accent);margin-left:3px;vertical-align:-.15em;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.lead{color:var(--muted);max-width:33em;margin:0 0 1.9rem;font-size:1.1rem}
+.btns{display:flex;flex-wrap:wrap;gap:.7rem}
+
+.glass{position:relative;background:var(--glass);border:1px solid var(--line);border-radius:22px;backdrop-filter:blur(12px);overflow:hidden}
+.glass::before{content:"";position:absolute;inset:0;background:radial-gradient(420px circle at var(--mx,50%) var(--my,0%),rgba(255,178,26,.13),transparent 60%);opacity:0;transition:opacity .25s;pointer-events:none}
+.glass:hover::before{opacity:1}
+.call{padding:1.3rem;box-shadow:0 40px 80px -40px rgba(0,0,0,.7)}
+.call-head{display:flex;justify-content:space-between;align-items:center;gap:.8rem;margin-bottom:.9rem;font-size:.85rem}
+.call-head b{display:flex;align-items:center;gap:.55rem;font-weight:500}
+.call-head b::before{content:"";width:8px;height:8px;border-radius:50%;background:#ff5d6c;animation:ping2 1.4s infinite}
+@keyframes ping2{50%{opacity:.3}}
+.langs{display:flex;gap:.3rem}
+.langs button{font:inherit;font-size:.82rem;color:var(--ink);background:transparent;border:1px solid var(--line);border-radius:999px;padding:.22rem .72rem;cursor:pointer}
+.langs button[aria-pressed=true]{background:var(--accent);border-color:var(--accent);color:var(--on-accent);font-weight:600}
+.wave{display:flex;align-items:center;gap:3px;height:34px;margin-bottom:.4rem}
+.wave i{flex:1;max-width:5px;border-radius:3px;background:linear-gradient(var(--accent),var(--a2));height:20%;animation:bar 1.1s ease-in-out infinite}
+@keyframes bar{50%{height:100%}}
+#transcript{min-height:250px}
+.msg{max-width:90%;padding:.62rem .9rem;border-radius:14px;margin:.5rem 0;font-size:.96rem;line-height:1.5;animation:in .45s both}
+.msg.ai{background:var(--glass2);border:1px solid var(--line);border-bottom-left-radius:4px}
+.msg.cust{background:linear-gradient(135deg,var(--accent),#ff8a3d);color:var(--on-accent);margin-left:auto;border-bottom-right-radius:4px}
+.msg small{display:block;opacity:.65;font-size:.72rem}
+@keyframes in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.tags{display:flex;flex-wrap:wrap;gap:.4rem;margin:.7rem 0 0}
+.tags span{font-size:.78rem;padding:.16rem .65rem;border-radius:999px;border:1px solid var(--line);color:var(--muted)}
+.note{margin:.8rem 0 0;font-size:.78rem;color:var(--muted)}
+
+.stats{display:grid;grid-template-columns:repeat(4,1fr)}
+.stats div{padding:1.6rem 1.6rem;border-left:1px solid var(--line)}.stats div:first-child{border-left:0}
+.stats b{display:block;font:800 2.6rem var(--display);letter-spacing:-.03em;background:linear-gradient(120deg,var(--ink),var(--accent));-webkit-background-clip:text;background-clip:text;color:transparent}
+.stats span{color:var(--muted);font-size:.9rem;line-height:1.35;display:block}
+
+.marq{overflow:hidden;padding:2.2rem 0 0;mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)}
+.track{display:flex;gap:.7rem;width:max-content;animation:scroll 40s linear infinite}
+.marq:hover .track{animation-play-state:paused}
+.track span{white-space:nowrap;padding:.4rem 1rem;border:1px solid var(--line);border-radius:999px;background:var(--glass2);color:var(--muted);font-size:.9rem}
+@keyframes scroll{to{transform:translateX(-50%)}}
+
+details.case{margin-bottom:1.1rem}
+details.case summary{position:relative;list-style:none;cursor:pointer;padding:1.7rem 1.9rem;display:grid;grid-template-columns:1fr auto;gap:.5rem 1.5rem;align-items:start}
+details.case summary::-webkit-details-marker{display:none}
+.case h3{font-size:1.65rem;letter-spacing:-.01em}
+.who{color:var(--accent);font-weight:600;font-size:.88rem}
+.one{grid-column:1;margin:0;color:var(--muted);max-width:60ch}
+.plus{grid-row:1/3;grid-column:2;width:38px;height:38px;border:1px solid var(--line);border-radius:50%;display:grid;place-items:center;font-size:1.35rem;transition:transform .25s,background .25s}
+details[open] .plus{transform:rotate(45deg);background:var(--accent);color:var(--on-accent);border-color:transparent}
+.body{position:relative;padding:1.5rem 1.9rem 1.9rem;display:grid;grid-template-columns:repeat(3,1fr);gap:1.6rem;border-top:1px solid var(--line)}
+.body h4{margin:0 0 .35rem;font:700 .95rem var(--display);color:var(--a3)}
+.body p{margin:0;font-size:.97rem}
+.flow{grid-column:1/-1;display:flex;flex-wrap:wrap;align-items:center;gap:.5rem;font-size:.86rem}
+.flow span{padding:.4rem .85rem;border-radius:10px;border:1px solid var(--line);background:var(--glass2)}
+.flow span:nth-child(4){border-color:var(--accent);color:var(--accent)}
+.flow em{font-style:normal;color:var(--muted)}
+.flow small{width:100%;color:var(--muted);font-size:.78rem}
+.chips{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:.4rem;margin:0;padding:0;list-style:none}
+.chips li{font-size:.8rem;padding:.16rem .65rem;border:1px solid var(--line);border-radius:999px;background:var(--glass2)}
+
+.more{display:grid;grid-template-columns:repeat(2,1fr);gap:1.1rem;margin-top:2.2rem}
+.mini{padding:1.5rem 1.6rem}
+.mini h3{font-size:1.2rem;margin-bottom:.45rem}.mini p{margin:0 0 .9rem;font-size:.95rem;color:var(--muted)}
+
+.timeline{list-style:none;margin:0;padding:0 0 0 1.7rem;border-left:2px solid var(--line)}
+.timeline li{position:relative;padding:0 0 2.1rem 1rem}.timeline li:last-child{padding-bottom:0}
+.timeline li::before{content:"";position:absolute;left:calc(-1.7rem - 7px);top:.45rem;width:12px;height:12px;border-radius:50%;background:var(--bg);border:3px solid var(--accent);box-shadow:0 0 14px var(--accent)}
+.timeline h3{font-size:1.25rem}.timeline .when{color:var(--muted);font-size:.9rem;margin:.1rem 0 .45rem}.timeline p{margin:0;max-width:64ch}
+
+.skills{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem}
+.skill{padding:1.4rem 1.5rem}.skill h3{font-size:1.02rem;margin-bottom:.8rem}
+
+.two{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem}
+.two .glass{padding:1.7rem}.two h3{font-size:1.25rem;margin-bottom:1rem}.two ul{margin:0;padding-left:1.1rem}.two li{margin-bottom:.7rem}
+.two span{display:block;color:var(--muted);font-size:.92rem}
+
+.cta{text-align:center;padding:6rem 0;overflow:hidden}
+.cta .hero-bg{z-index:0}.cta .wrap{z-index:1}
+.cta h2{font-size:clamp(2.2rem,5.4vw,3.6rem)}.cta .sub{margin:0 auto 2rem}.cta .btns{justify-content:center}
+footer{border-top:1px solid var(--line);padding:1.6rem 0 2.5rem;color:var(--muted);font-size:.9rem}
+
+@media (max-width:900px){
+ .hero,.two,.skills,.more{grid-template-columns:1fr}
+ .stats{grid-template-columns:1fr 1fr}.stats div:nth-child(3){border-left:0}.stats div:nth-child(n+3){border-top:1px solid var(--line)}
+ .body{grid-template-columns:1fr}.bar nav a:not(.btn){display:none}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}.track{flex-wrap:wrap;width:auto}}
+</style>
+</head>
+<body>
+<div id="prog"></div>
+<header class="bar"><div class="wrap">
+  <a class="logo" href="#top"><i>S</i>Suriya Ganapathi K</a>
+  <nav aria-label="Main">
+    <a href="#work">Work</a><a href="#experience">Experience</a><a href="#skills">Skills</a><a href="#contact">Contact</a>
+    <button id="theme" type="button" aria-label="Switch light or dark theme">◐</button>
+    <a class="btn" href="Suriya_Ganapathi_resume.pdf" download>Resume</a>
+  </nav>
+</div></header>
+
+<main id="top">
+<div class="wrap" style="position:relative">
+  <div class="hero-bg" aria-hidden="true"><i></i><i></i><i></i></div>
+  <div class="hero">
+    <div>
+      <p class="avail"><i></i>Open to new AI engineering roles</p>
+      <h1>AI Engineer who ships to production.</h1>
+      <div class="type" aria-live="off"><span id="typed">voice agents</span></div>
+      <p class="lead">I build LLM applications for banks and enterprise clients at DoodleBlue Innovations, Chennai. My work runs in Hindi, Tamil, English and Japanese, and has to meet real compliance rules.</p>
+      <div class="btns">
+        <a class="btn primary" href="mailto:suriyaganapathi96@gmail.com">Get in touch</a>
+        <a class="btn" href="Suriya_Ganapathi_resume.pdf" download>Download resume</a>
+        <a class="btn" href="https://www.linkedin.com/in/suriya-ganapathi-659973319/">LinkedIn</a>
+        <a class="btn" href="https://github.com/suriya1409">GitHub</a>
+      </div>
+    </div>
+    <aside class="glass call" aria-label="Sample of a multilingual voice agent call">
+      <div class="call-head"><b>Voice agent, live sample</b>
+        <div class="langs" role="group" aria-label="Choose language">
+          <button type="button" data-l="en" aria-pressed="true">English</button>
+          <button type="button" data-l="ta" aria-pressed="false">தமிழ்</button>
+          <button type="button" data-l="hi" aria-pressed="false">हिन्दी</button>
+        </div></div>
+      <div class="wave" id="wave" aria-hidden="true"></div>
+      <div id="transcript" aria-live="polite"></div>
+      <div class="tags"><span>Sentiment tracked live</span><span>RBI guardrails</span><span>Gemini + Sarvam AI</span></div>
+      <p class="note">An illustration of my debt collection agent, not a real call.</p>
+    </aside>
+  </div>
+
+  <div class="glass stats" role="list">
+    <div role="listitem"><b data-to="500" data-suf="+">500+</b><span>calls a day handled by the voice agent</span></div>
+    <div role="listitem"><b data-to="70" data-pre="~" data-suf="%">~70%</b><span>less manual effort in document processing</span></div>
+    <div role="listitem"><b data-to="4" data-suf="+">4+</b><span>production AI apps delivered to clients</span></div>
+    <div role="listitem"><b data-to="4">4</b><span>languages: Hindi, Tamil, English, Japanese</span></div>
+  </div>
+  <div class="marq" aria-hidden="true"><div class="track" id="track"></div></div>
+</div>
+
+<section id="work"><div class="wrap">
+  <span class="eyebrow">Selected work</span>
+  <h2>Major projects</h2>
+  <p class="sub">Six major projects, each with the need, what I built and the outcome. Open any one for details.</p>
+
+  <details class="glass case" open>
+    <summary><div><span class="who">Banking client</span><h3>AI Debt Collection Voice Agent</h3></div><span class="plus" aria-hidden="true">+</span>
+      <p class="one">Multilingual calling at scale, kept inside RBI rules.</p></summary>
+    <div class="body">
+      <div class="flow"><span>Phone call (Vonage)</span><em>→</em><span>Speech &amp; language (Sarvam AI)</span><em>→</em><span>Reasoning (Gemini)</span><em>→</em><span>RBI guardrails</span><em>→</em><span>Spoken reply</span><small>Simplified view of the call flow.</small></div>
+      <div><h4>The need</h4><p>Reach many borrowers on the phone, in the language each one speaks, without breaking regulatory rules on how they are contacted.</p></div>
+      <div><h4>What I built</h4><p>A voice agent that talks in Hindi, Tamil and English, reads sentiment in real time and adapts the conversation. Rule-based guardrails keep every call within RBI rules.</p></div>
+      <div><h4>Result</h4><p>Runs 100+ concurrent calls and over 500 calls a day, automating borrower conversations.</p></div>
+      <ul class="chips"><li>Google Gemini</li><li>Sarvam AI</li><li>Vonage</li><li>Python</li></ul>
+    </div>
+  </details>
+
+  <details class="glass case">
+    <summary><div><span class="who">Nippon client</span><h3>Document Processing &amp; Translation Platform</h3></div><span class="plus" aria-hidden="true">+</span>
+      <p class="one">Structured data out of scanned and digital documents, with Japanese translation.</p></summary>
+    <div class="body">
+      <div><h4>The need</h4><p>Staff were reading finance, legal and logistics documents by hand and copying fields out of them.</p></div>
+      <div><h4>What I built</h4><p>An OCR pipeline with a custom parser factory, zero-shot classification and schema-based field extraction. It also translates English to Japanese using a custom glossary.</p></div>
+      <div><h4>Result</h4><p>About 70% less manual processing effort and about 85% extraction accuracy on a 20-document test set.</p></div>
+      <ul class="chips"><li>Gemini</li><li>Groq</li><li>EasyOCR</li><li>PyMuPDF</li><li>Pandas</li></ul>
+    </div>
+  </details>
+
+  <details class="glass case">
+    <summary><div><span class="who">Multi-agent system</span><h3>Retail &amp; Fibre Analytics and Planning Agent</h3></div><span class="plus" aria-hidden="true">+</span>
+      <p class="one">Business questions answered from verified data, with next steps suggested.</p></summary>
+    <div class="body">
+      <div><h4>The need</h4><p>Teams across Retail, Fibre and B2C wanted answers that follow approved business definitions, not guesses.</p></div>
+      <div><h4>What I built</h4><p>An Insights agent and a Planning agent reading from read-only PostgreSQL analytics and Pinecone metric search. The backend adds model routing, swappable providers, privacy controls and run tracking.</p></div>
+      <div><h4>Result</h4><p>Answers grounded in approved metrics, with evaluation checks run before every release.</p></div>
+      <ul class="chips"><li>LangGraph</li><li>AWS Bedrock</li><li>FastAPI</li><li>PostgreSQL</li><li>Pinecone</li></ul>
+    </div>
+  </details>
+
+  <details class="glass case">
+    <summary><div><span class="who">Agentic AI</span><h3>AI-Powered Marketing Content Platform</h3></div><span class="plus" aria-hidden="true">+</span>
+      <p class="one">Agents that plan, write and send personalised campaigns across channels.</p></summary>
+    <div class="body">
+      <div class="flow"><span>Campaign brief</span><em>→</em><span>Semantic retrieval</span><em>→</em><span>Agent orchestration (LangGraph)</span><em>→</em><span>Text &amp; image creation</span><em>→</em><span>Multi-channel delivery</span><small>Simplified view of the workflow.</small></div>
+      <div><h4>The need</h4><p>Marketing teams need personalised content for many customers, without writing and sending every message by hand.</p></div>
+      <div><h4>What I built</h4><p>A multi-step agentic platform on LangChain and LangGraph. Stateful agents orchestrate content generation and campaign workflows, create personalised text and images, use semantic retrieval, and keep context across turns.</p></div>
+      <div><h4>Result</h4><p>Content is generated and sent across several customer channels from one automated workflow.</p></div>
+      <ul class="chips"><li>LangChain</li><li>LangGraph</li><li>Semantic retrieval</li><li>Prompt engineering</li><li>Python</li></ul>
+    </div>
+  </details>
+
+  <details class="glass case">
+    <summary><div><span class="who">Retrieval-Augmented Generation</span><h3>RAG Knowledge Search &amp; Chatbot</h3></div><span class="plus" aria-hidden="true">+</span>
+      <p class="one">Plain-language answers from enterprise documents.</p></summary>
+    <div class="body">
+      <div class="flow"><span>Documents</span><em>→</em><span>Chunking</span><em>→</em><span>Embeddings</span><em>→</em><span>Vector search (FAISS / MongoDB)</span><em>→</em><span>LLM answer</span><small>Simplified view of the retrieval pipeline.</small></div>
+      <div><h4>The need</h4><p>People waste time searching long documents when they only want the answer to a question.</p></div>
+      <div><h4>What I built</h4><p>A complete retrieval pipeline covering document ingestion, text chunking, embedding generation and semantic similarity search with FAISS, orchestrated with LangChain. I also built a RAG chatbot on OpenAI and MongoDB Vector Search.</p></div>
+      <div><h4>Result</h4><p>Users query enterprise knowledge bases in natural language and get context-aware answers.</p></div>
+      <ul class="chips"><li>LangChain</li><li>LangGraph</li><li>FAISS</li><li>OpenAI</li><li>MongoDB Vector Search</li></ul>
+    </div>
+  </details>
+
+  <details class="glass case">
+    <summary><div><span class="who">Machine learning · Healthcare</span><h3>PCOS Detection Using Machine Learning (RNN)</h3></div><span class="plus" aria-hidden="true">+</span>
+      <p class="one">A full-stack web app that predicts PCOS risk for early screening.</p></summary>
+    <div class="body">
+      <div class="flow"><span>Health inputs (web form)</span><em>→</em><span>Flask API</span><em>→</em><span>RNN model</span><em>→</em><span>Risk prediction</span><small>Simplified view of the prediction flow.</small></div>
+      <div><h4>The need</h4><p>Early signs of PCOS are easy to miss, and people want a quick way to check their risk before seeing a doctor.</p></div>
+      <div><h4>What I built</h4><p>A Flask, MySQL and JavaScript web app where users enter health parameters for real-time analysis. I trained and optimised an RNN on medical datasets to classify PCOS risk.</p></div>
+      <div><h4>Result</h4><p>A simple interface that shows the prediction straight away, to support early health screening.</p></div>
+      <ul class="chips"><li>TensorFlow</li><li>RNN</li><li>Flask</li><li>MySQL</li><li>HTML / CSS / JavaScript</li></ul>
+    </div>
+  </details>
+</div></section>
+
+<section id="experience"><div class="wrap">
+  <span class="eyebrow">Experience</span>
+  <h2>From intern to AI Engineer in 7 months</h2>
+  <p class="sub">I joined DoodleBlue as an intern and was converted to a full-time role after delivering three end-to-end systems.</p>
+  <div class="glass" style="padding:2rem 2rem 2rem 2.2rem">
+  <ol class="timeline">
+    <li><h3>AI Engineer, DoodleBlue Innovations</h3><p class="when">Feb 2026 to present · Chennai</p><p>I maintain 4+ production AI applications for enterprise clients across RAG, document processing and conversational AI. I design backends that connect cloud APIs, handle several languages and meet regulatory requirements.</p></li>
+    <li><h3>AI/ML Intern, DoodleBlue Innovations</h3><p class="when">Jul 2025 to Jan 2026 · Chennai</p><p>I built the debt collection voice agent, a RAG chatbot on OpenAI and MongoDB, and the document processing platform, working on every stage from data intake to deployment.</p></li>
+    <li><h3>AI &amp; Data Science Intern, EduFyi Tech Solutions</h3><p class="when">Jul 2025 to Sep 2025 · Remote</p><p>I built predictive models and ran exploratory analysis on real datasets with Python and Scikit-learn.</p></li>
+    <li><h3>Big Data Intern, Code Bind Technologies</h3><p class="when">2024 · 15 days</p><p>I designed a data warehouse for an e-commerce platform, using ETL concepts and dimensional models for BI reporting.</p></li>
+  </ol></div>
+</div></section>
+
+<section id="skills" style="padding-top:1rem"><div class="wrap">
+  <span class="eyebrow">Skills</span>
+  <h2>The stack I build with</h2>
+  <p class="sub">Tools I use day to day to build and run AI systems.</p>
+  <div class="skills">
+    <div class="glass skill"><h3>Generative &amp; agentic AI</h3><ul class="chips"><li>LangChain</li><li>LangGraph</li><li>LangSmith</li><li>Langfuse</li><li>RAG</li><li>Prompt engineering</li><li>Multi-agent systems</li></ul></div>
+    <div class="glass skill"><h3>LLM platforms</h3><ul class="chips"><li>OpenAI</li><li>Google Gemini</li><li>Groq</li><li>Sarvam AI</li><li>AWS Bedrock</li></ul></div>
+    <div class="glass skill"><h3>Backend &amp; languages</h3><ul class="chips"><li>Python</li><li>FastAPI</li><li>Flask</li><li>Streamlit</li><li>SQL</li><li>JavaScript</li><li>Git</li><li>Postman</li></ul></div>
+    <div class="glass skill"><h3>Data stores</h3><ul class="chips"><li>PostgreSQL</li><li>MySQL</li><li>MongoDB Vector Search</li><li>Pinecone</li><li>FAISS</li><li>ChromaDB</li></ul></div>
+    <div class="glass skill"><h3>ML &amp; vision</h3><ul class="chips"><li>Scikit-learn</li><li>TensorFlow</li><li>NLP</li><li>RNN</li><li>Sentiment analysis</li><li>EasyOCR</li><li>PyMuPDF</li></ul></div>
+    <div class="glass skill"><h3>Analytics</h3><ul class="chips"><li>Power BI</li><li>Excel</li><li>Pandas</li></ul></div>
+  </div>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap two">
+  <div class="glass"><h3>Education</h3><ul>
+    <li><strong>B.Tech, Artificial Intelligence and Data Science</strong><span>Vel Tech Multi Tech Dr. Rangarajan Dr. Sakunthala Engineering College · 2021 to 2025</span></li>
+    <li><strong>Higher Secondary (Class XII)</strong><span>New Prince Matriculation Higher Secondary School · 2019 to 2021</span></li></ul></div>
+  <div class="glass"><h3>Certifications</h3><ul>
+    <li>Complete Agentic AI Bootcamp with LangGraph and LangChain (Udemy)</li>
+    <li>Ultimate RAG Bootcamp using LangChain, LangGraph and LangSmith (Udemy)</li>
+    <li>Power BI (Vel Tech)</li><li>Python Programming (Top Engineers workshop)</li></ul></div>
+</div></section>
+
+<section id="contact" class="cta">
+  <div class="hero-bg" aria-hidden="true"><i></i><i></i><i></i></div>
+  <div class="wrap">
+    <h2>Hiring for an AI role?</h2>
+    <p class="sub">I'm happy to talk about voice agents, document AI, RAG or agent systems. Email is the fastest way to reach me.</p>
+    <div class="btns">
+      <a class="btn primary" href="mailto:suriyaganapathi96@gmail.com">suriyaganapathi96@gmail.com</a>
+      <a class="btn" href="https://www.linkedin.com/in/suriya-ganapathi-659973319/">LinkedIn</a>
+      <a class="btn" href="Suriya_Ganapathi_resume.pdf" download>Download resume</a>
+    </div>
+  </div>
+</section>
+</main>
+<footer><div class="wrap">© 2026 Suriya Ganapathi K · Chennai, Tamil Nadu, India</div></footer>
+
+<script>
+(function(){
+var calm=matchMedia("(prefers-reduced-motion: reduce)").matches,$=function(s){return document.querySelector(s)};
+/* theme */
+var root=document.documentElement;
+try{var st=localStorage.getItem("theme");if(st)root.dataset.theme=st}catch(e){}
+$("#theme").addEventListener("click",function(){var n=root.dataset.theme==="dark"?"light":"dark";root.dataset.theme=n;try{localStorage.setItem("theme",n)}catch(e){}});
+/* progress */
+var pg=$("#prog");addEventListener("scroll",function(){var h=document.documentElement;pg.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+"%"},{passive:true});
+/* spotlight */
+document.querySelectorAll(".glass").forEach(function(g){g.addEventListener("mousemove",function(e){var r=g.getBoundingClientRect();g.style.setProperty("--mx",(e.clientX-r.left)+"px");g.style.setProperty("--my",(e.clientY-r.top)+"px")})});
+/* waveform */
+var w=$("#wave");for(var i=0;i<46;i++){var b=document.createElement("i");b.style.animationDelay=(-Math.random()*1.1).toFixed(2)+"s";b.style.animationDuration=(0.7+Math.random()*0.8).toFixed(2)+"s";w.appendChild(b)}
+/* marquee */
+var tech=["Python","LangGraph","LangChain","FastAPI","Google Gemini","OpenAI","Groq","Sarvam AI","AWS Bedrock","RAG","Pinecone","FAISS","MongoDB Vector Search","PostgreSQL","EasyOCR","TensorFlow","Power BI"];
+var tr=$("#track");tr.innerHTML=tech.concat(tech).map(function(t){return "<span>"+t+"</span>"}).join("");
+/* typing */
+var roles=["voice agents","document AI","RAG systems","multi-agent platforms"],ti=0,ci=0,del=false,el=$("#typed");
+function tick(){var r=roles[ti];ci+=del?-1:1;el.textContent=r.slice(0,ci);var d=del?35:80;
+ if(!del&&ci===r.length){del=true;d=1400}else if(del&&ci===0){del=false;ti=(ti+1)%roles.length;d=300}setTimeout(tick,d)}
+if(calm)el.textContent=roles.join(", ");else{el.textContent="";tick()}
+/* counters */
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;io.unobserve(e.target);
+ var n=e.target,to=+n.dataset.to,pre=n.dataset.pre||"",suf=n.dataset.suf||"",t0=performance.now();
+ if(calm)return;(function f(t){var p=Math.min((t-t0)/1400,1);n.textContent=pre+Math.round(to*(1-Math.pow(1-p,3)))+suf;if(p<1)requestAnimationFrame(f)})(t0)})},{threshold:.6});
+document.querySelectorAll("[data-to]").forEach(function(n){io.observe(n)});
+/* transcript */
+var T={en:[["ai","Voice agent","Hello, this is a call from your bank about your pending payment. Is this a good time to talk?"],["cust","Customer","I can pay part of it this week."],["ai","Voice agent","Thank you. I can note a payment date for you. Which day works best?"]],
+ta:[["ai","Voice agent","வணக்கம், உங்கள் நிலுவைத் தொகை குறித்து வங்கியிலிருந்து அழைக்கிறேன். இப்போது பேசலாமா?"],["cust","Customer","இந்த வாரம் ஒரு பகுதியைச் செலுத்த முடியும்."],["ai","Voice agent","நன்றி. நான் பணம் செலுத்தும் தேதியைக் குறித்துக்கொள்கிறேன். எந்த நாள் வசதியாக இருக்கும்?"]],
+hi:[["ai","Voice agent","नमस्ते, मैं आपके बैंक की ओर से बकाया भुगतान के बारे में बात कर रहा हूँ। क्या अभी बात कर सकते हैं?"],["cust","Customer","मैं इस हफ़्ते कुछ राशि दे सकता हूँ।"],["ai","Voice agent","धन्यवाद। मैं भुगतान की तारीख़ नोट कर लेता हूँ। आपके लिए कौन सा दिन ठीक रहेगा?"]]};
+var box=$("#transcript"),btns=document.querySelectorAll(".langs button"),tm=[];
+function show(l){tm.forEach(clearTimeout);tm=[];box.innerHTML="";
+ btns.forEach(function(b){b.setAttribute("aria-pressed",b.dataset.l===l?"true":"false")});
+ T[l].forEach(function(m,i){function add(){var d=document.createElement("div");d.className="msg "+m[0];var s=document.createElement("small");s.textContent=m[1];d.appendChild(s);d.appendChild(document.createTextNode(m[2]));box.appendChild(d)}
+  if(calm)add();else tm.push(setTimeout(add,i*1000))})}
+btns.forEach(function(b){b.addEventListener("click",function(){show(b.dataset.l)})});show("en");
+})();
+</script>
+</body>
+</html>
