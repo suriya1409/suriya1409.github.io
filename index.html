@@ -392,3 +392,34 @@ btns.forEach(function(b){b.addEventListener("click",function(){show(b.dataset.l)
 </script>
 </body>
 </html>
+<script>
+(function(){
+var old=document.getElementById("play");if(!old)return;
+var pb=old.cloneNode(true);old.parentNode.replaceChild(pb,old);
+var wave=document.getElementById("wave"),box=document.getElementById("transcript"),note=document.querySelector(".note"),base=note.textContent,aud=null,run=0;
+var LC={en:"en-IN",ta:"ta-IN",hi:"hi-IN"};
+function lang(){var b=document.querySelector(".langs button[aria-pressed=true]");return b?b.dataset.l:"en"}
+function mark(i){[].forEach.call(box.children,function(e,k){e.classList.toggle("now",k===i)})}
+function stop(){run++;if(aud){aud.pause();aud=null}if(window.speechSynthesis)speechSynthesis.cancel();pb.textContent="▶";pb.setAttribute("aria-label","Play sample call");wave.classList.remove("on");mark(-1)}
+function fallback(my){if(!window.speechSynthesis){stop();return}
+ var l=lang(),vs=speechSynthesis.getVoices(),v=vs.filter(function(x){return x.lang.replace("_","-").toLowerCase()===LC[l].toLowerCase()})[0]||vs.filter(function(x){return x.lang.toLowerCase().indexOf(l)===0})[0];
+ var items=[].slice.call(box.children);
+ (function next(i){if(my!==run)return;if(i>=items.length){stop();return}
+  var u=new SpeechSynthesisUtterance(items[i].lastChild.textContent);u.lang=LC[l];if(v)u.voice=v;u.rate=.95;
+  mark(i);u.onend=function(){next(i+1)};u.onerror=function(){if(my===run)stop()};speechSynthesis.speak(u)})(0)}
+pb.addEventListener("click",function(){
+ if(aud||pb.textContent==="■"){stop();return}
+ stop();var my=run,l=lang();
+ pb.textContent="■";pb.setAttribute("aria-label","Stop sample call");wave.classList.add("on");note.textContent=base;
+ var a=new Audio("voice-"+l+".mp3");aud=a;
+ a.addEventListener("timeupdate",function(){var it=[].slice.call(box.children);if(!a.duration||!it.length)return;
+  var tot=0,len=it.map(function(e){var n=e.textContent.length;tot+=n;return n}),pos=a.currentTime/a.duration*tot,acc=0,idx=0;
+  for(var k=0;k<len.length;k++){acc+=len[k];idx=k;if(pos<=acc)break}
+  mark(idx)});
+ a.addEventListener("ended",function(){if(my===run)stop()});
+ a.addEventListener("error",function(){if(my===run&&aud===a){aud=null;fallback(my)}});
+ var p=a.play();if(p&&p.catch)p.catch(function(){if(my===run&&aud===a){aud=null;fallback(my)}})
+});
+document.querySelectorAll(".langs button").forEach(function(b){b.addEventListener("click",stop)});
+})();
+</script>
