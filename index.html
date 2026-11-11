@@ -136,6 +136,12 @@ details[open] .plus{transform:rotate(45deg);background:var(--accent);color:var(-
 .cta h2{font-size:clamp(2.2rem,5.4vw,3.6rem)}.cta .sub{margin:0 auto 2rem}.cta .btns{justify-content:center}
 footer{border-top:1px solid var(--line);padding:1.6rem 0 2.5rem;color:var(--muted);font-size:.9rem}
 
+.wrap>.hero-bg{left:50%;right:auto;width:100vw;margin-left:-50vw}
+.wrow{display:flex;align-items:center;gap:.8rem;margin-bottom:.4rem}.wave{flex:1;margin-bottom:0}
+.wave:not(.on) i{animation-play-state:paused}
+.play{flex:none;width:44px;height:44px;border-radius:50%;border:0;cursor:pointer;font-size:1rem;color:var(--on-accent);background:linear-gradient(135deg,var(--accent),#ff8a3d);box-shadow:0 8px 24px -10px var(--accent);display:grid;place-items:center;padding:0}
+.play:hover{transform:scale(1.06)}
+.msg.now{outline:2px solid var(--accent);outline-offset:2px}
 @media (max-width:900px){
  .hero,.two,.skills,.more{grid-template-columns:1fr}
  .stats{grid-template-columns:1fr 1fr}.stats div:nth-child(3){border-left:0}.stats div:nth-child(n+3){border-top:1px solid var(--line)}
@@ -178,10 +184,10 @@ footer{border-top:1px solid var(--line);padding:1.6rem 0 2.5rem;color:var(--mute
           <button type="button" data-l="ta" aria-pressed="false">தமிழ்</button>
           <button type="button" data-l="hi" aria-pressed="false">हिन्दी</button>
         </div></div>
-      <div class="wave" id="wave" aria-hidden="true"></div>
+      <div class="wrow"><button class="play" id="play" type="button" aria-label="Play sample call">▶</button><div class="wave" id="wave" aria-hidden="true"></div></div>
       <div id="transcript" aria-live="polite"></div>
       <div class="tags"><span>Sentiment tracked live</span><span>RBI guardrails</span><span>Gemini + Sarvam AI</span></div>
-      <p class="note">An illustration of my debt collection agent, not a real call.</p>
+      <p class="note">An illustration of my debt collection agent, not a real call. Press ▶ to hear it read aloud.</p>
     </aside>
   </div>
 
@@ -352,11 +358,35 @@ document.querySelectorAll("[data-to]").forEach(function(n){io.observe(n)});
 var T={en:[["ai","Voice agent","Hello, this is a call from your bank about your pending payment. Is this a good time to talk?"],["cust","Customer","I can pay part of it this week."],["ai","Voice agent","Thank you. I can note a payment date for you. Which day works best?"]],
 ta:[["ai","Voice agent","வணக்கம், உங்கள் நிலுவைத் தொகை குறித்து வங்கியிலிருந்து அழைக்கிறேன். இப்போது பேசலாமா?"],["cust","Customer","இந்த வாரம் ஒரு பகுதியைச் செலுத்த முடியும்."],["ai","Voice agent","நன்றி. நான் பணம் செலுத்தும் தேதியைக் குறித்துக்கொள்கிறேன். எந்த நாள் வசதியாக இருக்கும்?"]],
 hi:[["ai","Voice agent","नमस्ते, मैं आपके बैंक की ओर से बकाया भुगतान के बारे में बात कर रहा हूँ। क्या अभी बात कर सकते हैं?"],["cust","Customer","मैं इस हफ़्ते कुछ राशि दे सकता हूँ।"],["ai","Voice agent","धन्यवाद। मैं भुगतान की तारीख़ नोट कर लेता हूँ। आपके लिए कौन सा दिन ठीक रहेगा?"]]};
-var box=$("#transcript"),btns=document.querySelectorAll(".langs button"),tm=[];
-function show(l){tm.forEach(clearTimeout);tm=[];box.innerHTML="";
+var box=$("#transcript"),btns=document.querySelectorAll(".langs button"),tm=[],cur="en",speaking=false,run=0;
+var playBtn=$("#play"),waveEl=$("#wave"),noteEl=document.querySelector(".note"),noteTxt=noteEl.textContent;
+var LC={en:"en-IN",ta:"ta-IN",hi:"hi-IN"},NAME={en:"English",ta:"Tamil",hi:"Hindi"};
+function render(l,instant){tm.forEach(clearTimeout);tm=[];box.innerHTML="";cur=l;
  btns.forEach(function(b){b.setAttribute("aria-pressed",b.dataset.l===l?"true":"false")});
  T[l].forEach(function(m,i){function add(){var d=document.createElement("div");d.className="msg "+m[0];var s=document.createElement("small");s.textContent=m[1];d.appendChild(s);d.appendChild(document.createTextNode(m[2]));box.appendChild(d)}
-  if(calm)add();else tm.push(setTimeout(add,i*1000))})}
+  if(calm||instant)add();else tm.push(setTimeout(add,i*1000))})}
+function stop(){run++;speaking=false;if(window.speechSynthesis)speechSynthesis.cancel();
+ playBtn.textContent="▶";playBtn.setAttribute("aria-label","Play sample call");waveEl.classList.remove("on");
+ box.querySelectorAll(".now").forEach(function(e){e.classList.remove("now")})}
+function voiceFor(l){var vs=speechSynthesis.getVoices(),want=LC[l].toLowerCase();
+ return vs.filter(function(v){return v.lang.replace("_","-").toLowerCase()===want})[0]||vs.filter(function(v){return v.lang.toLowerCase().indexOf(l)===0})[0]||null}
+function speak(i,my){if(my!==run)return;if(i>=T[cur].length){stop();return}
+ var m=T[cur][i],u=new SpeechSynthesisUtterance(m[2]),v=voiceFor(cur),el=box.children[i];
+ u.lang=LC[cur];if(v)u.voice=v;u.rate=.95;u.pitch=m[0]==="ai"?1:1.2;
+ if(el)el.classList.add("now");
+ u.onend=function(){if(el)el.classList.remove("now");speak(i+1,my)};
+ u.onerror=function(){if(my===run)stop()};
+ speechSynthesis.speak(u)}
+function show(l){stop();noteEl.textContent=noteTxt;render(l,false)}
+if(!("speechSynthesis" in window)){document.querySelector(".wrow").removeChild(playBtn)}
+else{
+ speechSynthesis.getVoices();
+ playBtn.addEventListener("click",function(){
+  if(speaking){stop();return}
+  render(cur,true);speaking=true;run++;
+  playBtn.textContent="■";playBtn.setAttribute("aria-label","Stop sample call");waveEl.classList.add("on");
+  noteEl.textContent=voiceFor(cur)?noteTxt:"No "+NAME[cur]+" voice was found on this device, so it may stay silent. Try Chrome or Edge, or switch language.";
+  speak(0,run)})}
 btns.forEach(function(b){b.addEventListener("click",function(){show(b.dataset.l)})});show("en");
 })();
 </script>
