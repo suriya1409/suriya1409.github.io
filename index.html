@@ -209,11 +209,11 @@ footer{border-top:1px solid var(--line);padding:1.6rem 0 2.5rem;color:var(--mute
     <summary><div><span class="who">Banking client</span><h3>AI Debt Collection Voice Agent</h3></div><span class="plus" aria-hidden="true">+</span>
       <p class="one">Multilingual calling at scale, kept inside RBI rules.</p></summary>
     <div class="body">
-      <div class="flow"><span>Phone call (Vonage)</span><em>→</em><span>Speech &amp; language (Sarvam AI)</span><em>→</em><span>Reasoning (Gemini)</span><em>→</em><span>RBI guardrails</span><em>→</em><span>Spoken reply</span><small>Simplified view of the call flow.</small></div>
+      <div class="flow"><span>Phone call (Sarvam telephony)</span><em>→</em><span>Speech &amp; language (Sarvam AI)</span><em>→</em><span>Reasoning (Gemini)</span><em>→</em><span>RBI guardrails</span><em>→</em><span>Spoken reply</span><small>Simplified view of the call flow.</small></div>
       <div><h4>The need</h4><p>Reach many borrowers on the phone, in the language each one speaks, without breaking regulatory rules on how they are contacted.</p></div>
       <div><h4>What I built</h4><p>A voice agent that talks in Hindi, Tamil and English, reads sentiment in real time and adapts the conversation. Rule-based guardrails keep every call within RBI rules.</p></div>
       <div><h4>Result</h4><p>Runs 100+ concurrent calls and over 500 calls a day, automating borrower conversations.</p></div>
-      <ul class="chips"><li>Google Gemini</li><li>Sarvam AI</li><li>Vonage</li><li>Python</li></ul>
+      <ul class="chips"><li>Google Gemini</li><li>Sarvam AI</li><li>Sarvam telephony</li><li>Python</li></ul>
     </div>
   </details>
 
@@ -235,7 +235,7 @@ footer{border-top:1px solid var(--line);padding:1.6rem 0 2.5rem;color:var(--mute
       <div><h4>The need</h4><p>Teams across Retail, Fibre and B2C wanted answers that follow approved business definitions, not guesses.</p></div>
       <div><h4>What I built</h4><p>An Insights agent and a Planning agent reading from read-only PostgreSQL analytics and Pinecone metric search. The backend adds model routing, swappable providers, privacy controls and run tracking.</p></div>
       <div><h4>Result</h4><p>Answers grounded in approved metrics, with evaluation checks run before every release.</p></div>
-      <ul class="chips"><li>LangGraph</li><li>AWS Bedrock</li><li>FastAPI</li><li>PostgreSQL</li><li>Pinecone</li></ul>
+      <ul class="chips"><li>LangGraph</li><li>AWS Bedrock</li><li>Claude</li><li>FastAPI</li><li>PostgreSQL</li><li>Pinecone</li></ul>
     </div>
   </details>
 
@@ -295,11 +295,12 @@ footer{border-top:1px solid var(--line);padding:1.6rem 0 2.5rem;color:var(--mute
   <p class="sub">Tools I use day to day to build and run AI systems.</p>
   <div class="skills">
     <div class="glass skill"><h3>Generative &amp; agentic AI</h3><ul class="chips"><li>LangChain</li><li>LangGraph</li><li>LangSmith</li><li>Langfuse</li><li>RAG</li><li>Prompt engineering</li><li>Multi-agent systems</li></ul></div>
-    <div class="glass skill"><h3>LLM platforms</h3><ul class="chips"><li>OpenAI</li><li>Google Gemini</li><li>Groq</li><li>Sarvam AI</li><li>AWS Bedrock</li></ul></div>
-    <div class="glass skill"><h3>Backend &amp; languages</h3><ul class="chips"><li>Python</li><li>FastAPI</li><li>Flask</li><li>Streamlit</li><li>SQL</li><li>JavaScript</li><li>Git</li><li>Postman</li></ul></div>
+    <div class="glass skill"><h3>LLM platforms</h3><ul class="chips"><li>OpenAI</li><li>Google Gemini</li><li>Anthropic Claude</li><li>Groq</li><li>Sarvam AI</li><li>AWS Bedrock</li></ul></div>
+    <div class="glass skill"><h3>Backend &amp; languages</h3><ul class="chips"><li>Python</li><li>FastAPI</li><li>Flask</li><li>Streamlit</li><li>SQL</li><li>JavaScript</li></ul></div>
     <div class="glass skill"><h3>Data stores</h3><ul class="chips"><li>PostgreSQL</li><li>MySQL</li><li>MongoDB Vector Search</li><li>Pinecone</li><li>FAISS</li><li>ChromaDB</li></ul></div>
     <div class="glass skill"><h3>ML &amp; vision</h3><ul class="chips"><li>Scikit-learn</li><li>TensorFlow</li><li>NLP</li><li>RNN</li><li>Sentiment analysis</li><li>EasyOCR</li><li>PyMuPDF</li></ul></div>
     <div class="glass skill"><h3>Analytics</h3><ul class="chips"><li>Power BI</li><li>Excel</li><li>Pandas</li></ul></div>
+    <div class="glass skill"><h3>Tools</h3><ul class="chips"><li>Git</li><li>Postman</li><li>Swagger</li></ul></div>
   </div>
 </div></section>
 
@@ -342,7 +343,7 @@ document.querySelectorAll(".glass").forEach(function(g){g.addEventListener("mous
 /* waveform */
 var w=$("#wave");for(var i=0;i<46;i++){var b=document.createElement("i");b.style.animationDelay=(-Math.random()*1.1).toFixed(2)+"s";b.style.animationDuration=(0.7+Math.random()*0.8).toFixed(2)+"s";w.appendChild(b)}
 /* marquee */
-var tech=["Python","LangGraph","LangChain","FastAPI","Google Gemini","OpenAI","Groq","Sarvam AI","AWS Bedrock","RAG","Pinecone","FAISS","MongoDB Vector Search","PostgreSQL","EasyOCR","TensorFlow","Power BI"];
+var tech=["Python","LangGraph","LangChain","FastAPI","Google Gemini","Anthropic Claude","OpenAI","Groq","Sarvam AI","AWS Bedrock","RAG","Pinecone","FAISS","MongoDB Vector Search","PostgreSQL","EasyOCR","TensorFlow","Power BI"];
 var tr=$("#track");tr.innerHTML=tech.concat(tech).map(function(t){return "<span>"+t+"</span>"}).join("");
 /* typing */
 var roles=["voice agents","document AI","RAG systems","multi-agent platforms"],ti=0,ci=0,del=false,el=$("#typed");
@@ -390,8 +391,6 @@ else{
 btns.forEach(function(b){b.addEventListener("click",function(){show(b.dataset.l)})});show("en");
 })();
 </script>
-</body>
-</html>
 <script>
 (function(){
 var old=document.getElementById("play");if(!old)return;
@@ -423,3 +422,5 @@ pb.addEventListener("click",function(){
 document.querySelectorAll(".langs button").forEach(function(b){b.addEventListener("click",stop)});
 })();
 </script>
+</body>
+</html>
